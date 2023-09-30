@@ -1,5 +1,56 @@
 # jhipster_samples
 
+```
+
+# 環境変数の設定
+# 値は好きに
+# デプロイ先に同キーを設定
+APP_DATABASE_HOST=localhost
+APP_DATABASE_DATABASE=postgres
+APP_DATABASE_USERNAME=sqluser
+APP_DATABASE_PASSWORD=abc123
+APP_DATABASE_PORT=5432
+
+
+# dockerでDB/Redis起動する場合
+docker compose up -d
+docker compose down
+docker compose down --volumes
+
+docker compose exec db bash
+psql -U xxx
+\l
+\d
+\i ./scripts/1u.sql
+\i ./scripts/1d.sql
+
+docker compose exec redis bash
+
+
+# ツールとかで使用したいときに
+npm install -g tsx
+tsx .\scripts\xxx.ts
+
+
+
+# 起動
+.\mvnw
+npm start
+
+# バックエンドデバッグ
+npm run backend:debug
+Run and Debug > http://localhost:8080/
+
+# バックエンドデバッグ
+npm run backend:debug か .\mvnw
+// eslint-disable-next-line no-debugger
+debugger
+
+
+
+
+```
+
 This application was generated using JHipster 7.9.4, you can find documentation and help at [https://www.jhipster.tech/documentation-archive/v7.9.4](https://www.jhipster.tech/documentation-archive/v7.9.4).
 
 ## Project Structure

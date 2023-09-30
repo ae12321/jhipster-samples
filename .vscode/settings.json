@@ -30,8 +30,10 @@
   },
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
 
+
+  // prettier-plugin-javaで代用
   // "java.format.settings.profile": "JavaFormatter",
   // "java.format.settings.url": ".vscode/java-formatter.xml",
   // "[java]": {
@@ -40,4 +42,7 @@
   //   "editor.formatOnType": true,
   //   "editor.detectIndentation": false
   // }
+  "[java]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
