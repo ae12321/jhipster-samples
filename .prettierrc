@@ -1,18 +1,27 @@
-# Prettier configuration
+{
+  "printWidth": 140,
+  "tabWidth": 2,
+  "useTabs": false,
+  "semi": true,
+  "endOfLine": "lf",
 
-printWidth: 140
-singleQuote: true
-tabWidth: 2
-useTabs: false
+  "singleQuote": true,
+  "jsxSingleQuote": true,
 
-# js and ts rules:
-arrowParens: avoid
+  "trailingComma": "es5",
+  "quoteProps": "as-needed",
 
-# jsx and tsx rules:
-bracketSameLine: false
+  "arrowParens": "avoid",
+  "bracketSameLine": false,
+  "bracketSpacing": true,
 
-# java rules:
-overrides:
-  - files: "*.java"
-    options:
-      tabWidth: 4
+  "overrides": [
+    {
+      "files": "*.java",
+      "excludeFiles": [],
+      "options": {
+        "tabWidth": 4
+      }
+    }
+  ]
+}

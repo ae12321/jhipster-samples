@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    "formulahendry.auto-rename-tag",
+    "vscjava.vscode-java-debug",
+    "dsznajder.es7-react-js-snippets",
+    "dbaeumer.vscode-eslint",
+    "vscjava.vscode-java-pack",
+    "visualstudioexptteam.vscodeintellicode"
+  ]
+}
