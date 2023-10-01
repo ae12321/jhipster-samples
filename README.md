@@ -3,20 +3,42 @@
 ```
 
 # 環境変数の設定
-# 値は好きに
-# デプロイ先に同キーを設定
+# - docker, nodeは.envを使用できるが、Javaは使用できないクソなので、環境変数をPCに設定する
+# - 値は好きに
+# - ただし、ローカル実行の際は、xx_HOSTはlocalhost固定で、APP_CACHE_SSLはfalse固定で
+# - デプロイ先に同キーを設定
 APP_DATABASE_HOST=localhost
 APP_DATABASE_DATABASE=postgres
 APP_DATABASE_USERNAME=sqluser
 APP_DATABASE_PASSWORD=abc123
 APP_DATABASE_PORT=5432
+APP_CACHE_HOST=localhost
+APP_CACHE_KEY=redis12345
+APP_CACHE_PORT=6379
+APP_CACHE_SSL=false
 
-
-# dockerでDB/Redis起動する場合
+# インフラの起動
+# - PostgreSQLデータベース、redisをPCに入れ、上記値で設定できるなら不要
+# - dockerでDB/Redis起動する場合
 docker compose up -d
 docker compose down
 docker compose down --volumes
 
+
+# 基本起動
+.\mvnw
+npm start
+
+# バックエンドデバッグ
+npm run backend:debug
+Run and Debug
+
+# フロントエンドデバッグ
+// eslint-disable-next-line no-debugger
+debugger
+
+
+# PostgreSQL, Dockerコマンド例
 docker compose exec db bash
 psql -U xxx
 \l
@@ -24,27 +46,21 @@ psql -U xxx
 \i ./scripts/1u.sql
 \i ./scripts/1d.sql
 
-docker compose exec redis bash
+# Redis, Dockerコマンド例
+docker compose exec cache sh
+redis-cli
+auth xxx
+keys *
+get xxx
+set xxx yyy
 
 
-# ツールとかで使用したいときに
+
+# nodeツールを作成したいとき
 npm install -g tsx
 tsx .\scripts\xxx.ts
 
 
-
-# 起動
-.\mvnw
-npm start
-
-# バックエンドデバッグ
-npm run backend:debug
-Run and Debug > http://localhost:8080/
-
-# バックエンドデバッグ
-npm run backend:debug か .\mvnw
-// eslint-disable-next-line no-debugger
-debugger
 
 
 

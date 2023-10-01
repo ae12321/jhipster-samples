@@ -106,6 +106,13 @@
     </dependencyManagement>
 
     <dependencies>
+    <!-- 独自追加 -->
+<dependency>
+    <groupId>redis.clients</groupId>
+    <artifactId>jedis</artifactId>
+    <version>5.0.0</version>
+</dependency>
+
         <dependency>
             <groupId>tech.jhipster</groupId>
             <artifactId>jhipster-framework</artifactId>

@@ -13,6 +13,12 @@
 # http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
 # ===================================================================
 
+cache:
+  host: ${APP_CACHE_HOST}
+  port: ${APP_CACHE_PORT}
+  key: ${APP_CACHE_KEY}
+  ssl: ${APP_CACHE_SSL}
+
 logging:
   level:
     ROOT: DEBUG
